@@ -120,5 +120,5 @@ exit();*/
     </tbody>   
   </table>
   <center><h5><strong>Garantia {{ isset($empresa->warranty) ? $empresa->warranty : "-"}} dias</strong></h5></center>
-  <h5><strong>{{ isset($empresa->observations) ? $empresa->observations : ""}}</strong></h5>
+  <h6><strong>{{ isset($empresa->observations) ? $empresa->observations : ""}}</strong></h6>
 @stop

@@ -32,9 +32,14 @@
 					<p> <strong>Razón:</strong> {{ $reception->reason->description }}</p>
 
 					<p> <strong>Concepto:</strong> {{ $reception->concept }}</p>
-				
 					@if($reception->budget)
 						<p> <strong>Presupuesto:</strong> {{ $reception->budget }}</p>
+                    @endif
+					
+					@if($reception->drums == 'NOT')
+						<p> <strong>Entrego Bateria/Cargador:</strong>No</p>
+					@else
+						<p> <strong>Entrego Bateria/Cargador:</strong>Si</p>
                     @endif
 
 					@if($reception->file)

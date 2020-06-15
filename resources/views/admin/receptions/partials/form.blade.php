@@ -39,6 +39,19 @@
 	{{ form::label('concept', 'Concepto:') }}
 	{{ form::textarea('concept', null, ['class' => 'form-control']) }}
 </div>
+<div class="form-group">
+	@if(isset($reception))
+		<div class="form-group">
+			{{ form::label('drums', 'Bateria/Cargador: ') }}
+			<label>
+				{{ Form::radio('drums','NOT')}} No
+			</label>
+			<label>
+				{{ Form::radio('drums','YES')}} Si
+			</label>
+		</div>
+	@endif
+</div>
 
 <div class="form-group">
 	{{ form::label('budget', 'Presupuesto (Opcional):') }}
@@ -46,16 +59,15 @@
 </div>
 
 
-
 @if (isset($reception))
-	@if($reception->status !== 'REPAIRING')
+	@if($reception->status !== 'PROCESS')
 		<div class="form-group">
 			{{ form::label('status', 'Estado:') }}
 			<label>
-				{{ Form::radio('status','WAITING')}} En Espera
+				{{ Form::radio('status','RECEIVED')}} Recibido
 			</label>
 			<label>
-				{{ Form::radio('status','RECEIVED')}} Recibido
+				{{ Form::radio('status','PROCESS')}} Aprobada
 			</label>
 		</div>
 	@endif
@@ -63,10 +75,10 @@
 	<div class="form-group">
 		{{ form::label('status', 'Estado:') }}
 		<label>
-			{{ Form::radio('status','WAITING')}} En Espera
+			{{ Form::radio('status','RECEIVED')}} Recibido
 		</label>
 		<label>
-			{{ Form::radio('status','RECEIVED')}} Recibido
+			{{ Form::radio('status','PROCESS')}} Aprobada
 		</label>
 	</div>
 @endif

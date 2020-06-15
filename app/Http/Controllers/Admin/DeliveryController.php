@@ -65,7 +65,7 @@ class DeliveryController extends Controller
             $receptions = [ $value->id => $value->id .' - '. $client->name];
         }*/
 
-        $temp = Reception::where('status','RECEIVED')->orderBy('id', 'DESC')->get();
+        $temp = Reception::where('status','PROCESS')->orderBy('id', 'DESC')->get();
         
 
         foreach ($temp as  $value) {

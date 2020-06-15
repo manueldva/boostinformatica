@@ -14,8 +14,9 @@ class InfoController extends Controller
 
 		$received  = Reception::where('status', 'RECEIVED')->count();
     	$repairing = Reception::where('status', 'REPAIRING')->count();
-    	$waiting   = DB::table('deliveries')->sum('workPrice');//Reception::where('status', 'WAITING')->count();
+    	$process = Reception::where('status', 'PROCESS')->count();
+    	//$waiting   = DB::table('deliveries')->sum('workPrice');//Reception::where('status', 'WAITING')->count();
     	//$posts = Post::orderBy('id','DESC')->where('status','PUBLISHED')->paginate(5);
-    	return view('web.infos', compact('received', 'repairing', 'waiting'));
+    	return view('web.infos', compact('received', 'repairing', 'process'));
     }
 }

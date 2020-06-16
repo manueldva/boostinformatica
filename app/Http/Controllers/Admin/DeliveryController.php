@@ -17,6 +17,8 @@ use App\Reception;
 use App\Client;
 use App\reason;
 
+
+//ALTER TABLE receptions AUTO_INCREMENT = 100; -- CONTINUA DESDE 100
 class DeliveryController extends Controller
 {
     public function __construct()

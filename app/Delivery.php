@@ -24,7 +24,10 @@ class Delivery extends Model
             $query->where('deliverDate', $valor)->orderBy('id', 'DESC');
         } else if ($type == 'id')
         {
-            $query->where('id', $valor)->orderBy('id', 'DESC');
+            //$query->where('id', $valor)->orderBy('id', 'DESC');
+            $query->whereHas('reception', function ($receptions) use($valor) {
+                $receptions->where('id', '=',  $valor)->orderBy('id', 'DESC');
+            })->orderBy('id', 'DESC');
         } else if ($type == 'client') 
         {
 			$query->whereHas('reception', function ($receptions) use($valor) {

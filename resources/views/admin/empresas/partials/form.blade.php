@@ -22,7 +22,7 @@
 
 </div>
 
-
+<!--
 <div class="form-group">
 	{{ form::label('cuit', 'Cuit:') }}
 	{{ form::text('cuit', null, ['class' => 'form-control']) }}
@@ -37,7 +37,7 @@
 	{{ form::label('inicioactividades', 'Inicio de Actividades:') }}
 	{{ form::date('inicioactividades', null, ['class' => 'form-control']) }}
 </div>
-
+-->
 <div class="form-group">
 	{{ form::label('cellPhone', 'Nro Celular (opcional):') }}
 	{{ form::number('cellPhone', null, ['class' => 'form-control', 'id' => 'cellPhone']) }}

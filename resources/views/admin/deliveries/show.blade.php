@@ -20,7 +20,7 @@
 				</div>
 		
 				<div class="panel-body">
-					<p> <strong>Codigo:</strong> {{ $delivery->id }}</p>
+					<p> <strong>Codigo:</strong> {{ $delivery->reception->id }}</p>
 
 					<p> <strong>Cliente:</strong> {{ $delivery->reception->client->name }}</p>
 

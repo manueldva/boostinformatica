@@ -55,7 +55,7 @@
 							<tbody>
 								@foreach ($deliveries as $delivery)
 									<tr>
-										<td>{{ $delivery->id }}</td>
+										<td>{{ $delivery->reception->id }}</td>
 										<td>{{ $delivery->reception->client->name }}</td>
 										<td>{{ $delivery->reception->equipment->description }}</td>
 										<td>{{ $delivery->deliverDate }}</td>

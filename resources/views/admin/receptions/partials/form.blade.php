@@ -14,12 +14,12 @@
 	{{ form::select('equipment_id', $equipments, null, ['class' => 'form-control','placeholder' => 'Seleccionar...'] ) }}
 </div>
 
-
+<!--
 <div class="form-group">
 	{{ form::label('imei', 'Numero de IMEI (Opcional):') }}
 	{{ form::text('imei', null, ['class' => 'form-control', 'id' => 'imei']) }}
 </div>
-
+-->
 <div class="form-group">
 	{{ form::label('description', 'Descripcion:') }}
 	{{ form::textarea('description', null, ['class' => 'form-control']) }}

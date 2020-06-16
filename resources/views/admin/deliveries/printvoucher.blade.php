@@ -46,11 +46,12 @@ exit();*/
 
         <td><center>&nbsp;&nbsp;&nbsp;</center></td>
 
-        <td><strong>N° 0001 - {{$delivery->id}}<br>
+        <td><strong>N° 0001 - {{$delivery->reception->id}}<br>
         FECHA: {{$delivery->deliverDate}}<br>
-        CUIT. N°:  {{ isset($empresa->cuit) ? $empresa->cuit : "-"}} <br>
+        <!--CUIT. N°:  {{ isset($empresa->cuit) ? $empresa->cuit : "-"}} <br>
         ING. BRUTOS:  {{ isset($empresa->ingresosbrutos) ? $empresa->ingresosbrutos :  "-" }} <br>
-        INICIO DE ACTIVIDADES:{{ isset($empresa->inicioactividades) ? $empresa->inicioactividades :  "-" }} </strong></td>
+        INICIO DE ACTIVIDADES:{{ isset($empresa->inicioactividades) ? $empresa->inicioactividades :  "-" }}-->
+         </strong></td>
       </tr>
     </thead>
     <tbody>
@@ -140,4 +141,6 @@ exit();*/
       </tr>
     </tbody>   
   </table>
+   <center><h5><strong>Garantia {{ isset($empresa->warranty) ? $empresa->warranty : "-"}} dias</strong></h5></center>
+  <h6><strong>{{ isset($empresa->observations) ? $empresa->observations : ""}}</strong></h6>
 @stop

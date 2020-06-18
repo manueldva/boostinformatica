@@ -1,4 +1,15 @@
 
+@if(!isset($reception))
+	<div class="form-group">
+	{{ form::label('codmanual', 'Codigo Manual:') }}
+	<label>
+		{{ Form::checkbox('codmanual','1')}} 
+
+	</label>
+		{{ form::number('codigo', null, ['class' => 'form-control', 'id' => 'codigo', 'min' => '1']) }}
+</div>
+@endif
+
 <div class="form-group">
 	{{ form::label('client_id', 'Cliente:') }}
 	@if(isset($reception))
@@ -40,17 +51,15 @@
 	{{ form::textarea('concept', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-	@if(isset($reception))
-		<div class="form-group">
-			{{ form::label('drums', 'Bateria/Cargador: ') }}
-			<label>
-				{{ Form::radio('drums','NOT')}} No
-			</label>
-			<label>
-				{{ Form::radio('drums','YES')}} Si
-			</label>
-		</div>
-	@endif
+	<div class="form-group">
+		{{ form::label('drums', 'Bateria/Cargador: ') }}
+		<label>
+			{{ Form::radio('drums','NOT')}} No
+		</label>
+		<label>
+			{{ Form::radio('drums','YES')}} Si
+		</label>
+	</div>
 </div>
 
 <div class="form-group">

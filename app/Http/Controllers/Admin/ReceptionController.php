@@ -74,7 +74,40 @@ class ReceptionController extends Controller
      */
     public function store(ReceptionStoreRequest $request)
     {
-        $reception = Reception::create($request->all());
+        
+        //modificacion para cargar el id de la tabla manualmente
+
+        if($request->get('codmanual') == "1") //modificacion para cargar el id de la tabla manualmente
+        {
+            
+            if(Reception::where('id', $request->get('codigo'))->first()) // se verificar que no exista el id en la tabla
+            {
+                Alert::error('Ya existe el codigo que intenta ingresar')->persistent('Cerrar');
+                return back()->withInput();
+            } else { 
+                $reception = new Reception();     
+        
+                        $reception->id                  =    $request->get('codigo');
+                        $reception->client_id          =    $request->get('client_id');
+                        $reception->equipment_id        =    $request->get('equipment_id');
+                        $reception->description         =    $request->get('description');
+                        $reception->reason_id           =    $request->get('reason_id');
+                        $reception->concept             =    $request->get('concept');
+                        $reception->status              =    $request->get('status');
+                        $reception->budget              =    $request->get('budget');
+                        if($request->file('drums')) {
+                            $reception->drums           =    $request->get('drums');
+                        } 
+
+                $reception->save();
+            }
+        }else {
+            //dd($request->all());        
+            $reception = Reception::create($request->all());
+        }
+
+
+       
 
         //IMAGE 
         if($request->file('image')){

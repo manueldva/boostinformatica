@@ -105,12 +105,35 @@
 	<script type="text/javascript">
 
 		$('div.alert').not('.alert-important').delay(3000).fadeOut(350) 
+		function codigoValidacion(){ 
+			if( $('#codmanual').is(':checked') ){
+		        // Hacer algo si el checkbox ha sido seleccionado
+		        $('#codigo').removeAttr('disabled');
+		    } else {
+		        // Hacer algo si el checkbox ha sido deseleccionado
+		      	$('#codigo').attr('disabled','disabled');
+		      	$('#codigo').val('');
+		    }
+		}
 
+		codigoValidacion();
 		
 		$('#client_id').select2();
 		$('#equipment_id').select2();
 		$('#reason_id').select2();
 		
+
+		/*if($('input[name=codmanual]:checkbox:checked').val() == '1')
+		{
+			$('#input').attr('disabled','disabled');
+		} else{
+			$('#input').removeAttr('disabled');
+		}*/
+
+		$('#codmanual').on( 'click', function() {
+		    codigoValidacion();
+		});
+
 
 	</script>
 @endsection

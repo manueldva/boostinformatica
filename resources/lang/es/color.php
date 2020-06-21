@@ -3,5 +3,6 @@
     return [
 		'WAITING' => 'red',
 		'RECEIVED' => 'blue',
-		'REPAIRING' => 'green'
+		'REPAIRING' => 'green',
+		'REPAIRED' => 'black'
     ];

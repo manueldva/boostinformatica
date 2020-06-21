@@ -39,6 +39,11 @@
 
 					<p> <strong>Precio Trabajo:</strong> {{ $delivery->workPrice }}</p>
 
+					@if($delivery->repaired == 'NOT')
+						<p> <strong>Equipo Reparado:</strong>No</p>
+					@else
+						<p> <strong>Equipo Reparado:</strong>Si</p>
+                    @endif
 					
 				</div>
 			</div>

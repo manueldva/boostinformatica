@@ -43,6 +43,16 @@ class ReceptionController extends Controller
         //$status[] = ['WAITING' => 'En Espera', 'RECEIVED' => 'Recibido', 'REPAIRING' => 'Reparado'];
         //return $receptions;
 
+        /*para marcar como no reparado*/
+        foreach ($receptions as $key => $value) {
+            $delivery = Delivery::where('reception_id', $value->id)->first();
+            if ($delivery) {
+                if ($delivery->repaired == 'NOT') {
+                    $value->status = 'REPAIRED';
+                }
+            }
+        }
+
 
        return view('admin.receptions.index', compact('receptions'));
     }

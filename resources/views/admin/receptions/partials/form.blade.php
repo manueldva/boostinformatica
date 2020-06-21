@@ -1,13 +1,13 @@
 
 @if(!isset($reception))
 	<div class="form-group">
-	{{ form::label('codmanual', 'Codigo Manual:') }}
-	<label>
-		{{ Form::checkbox('codmanual','1')}} 
+		{{ form::label('codmanual', 'Codigo Manual:') }}
+		<label>
+			{{ Form::checkbox('codmanual','1')}} 
 
-	</label>
+		</label>
 		{{ form::number('codigo', null, ['class' => 'form-control', 'id' => 'codigo', 'min' => '1']) }}
-</div>
+	</div>
 @endif
 
 <div class="form-group">

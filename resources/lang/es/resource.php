@@ -6,5 +6,6 @@
 		'READONLY' => 'Solo Lectura',
 		'PROCESS' => 'Aprobada',
 		'RECEIVED' => 'Recibido',
-		'REPAIRING' => 'Reparado'
+		'REPAIRING' => 'Reparado',
+		'REPAIRED' => 'Sin Reparar'
     ];

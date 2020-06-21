@@ -1,7 +1,7 @@
 @if($empresa->file)
     <div class="form-group">
 		<p> <strong>Imagen:</strong></p>
-        <img src="{{ $empresa->file }}" height="200" width="300" >
+        <img src="{{ $empresa->file }}" height="200" width="300">
 	</div>
 @endif
 

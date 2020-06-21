@@ -9,7 +9,7 @@
 				<div class="panel-heading">
 					<strong>Ver Recepción</strong>	
 					</a>
-					@if($reception->status == 'RECEIVED')
+					@if($reception->status !== 'REPAIRING')
 						<a  href="{{ route('printvoucherreception', $reception->id) }}" class="btn btn-sm btn-default pull-right" target="_blank">
 							Imprimir Comprobante
 						</a>

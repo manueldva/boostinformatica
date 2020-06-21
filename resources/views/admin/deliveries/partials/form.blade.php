@@ -6,7 +6,7 @@
 
 <div class="form-group">
 	{{ form::label('deliverDate', 'Fecha Entrega:') }}
-	{{ form::date('deliverDate', null, ['class' => 'form-control', 'id' => 'deliverDate']) }}
+	{{ form::date('deliverDate', null, ['class' => 'form-control', 'id' => 'deliverDate', 'min' => '2000-01-01']) }}
 </div>
 <div class="form-group">
 	{{ form::label('workDone', 'Trabajo Hecho:') }}

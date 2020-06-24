@@ -24,7 +24,7 @@ class CreateReceptionsTable extends Migration
             $table->integer('reason_id')->unsigned();
             $table->foreign('reason_id')->references('id')->on('reasons')->onDelete('cascade')->onUpdate('cascade');
             $table->string('concept', 4000)->nullable();
-            $table->enum('status',['PROCESS', 'RECEIVED ', 'REPAIRING'])->default('RECEIVED');
+            $table->enum('status',['WAITING','PROCESS', 'RECEIVED ', 'REPAIRING'])->default('WAITING');
             $table->string('file', 128)->nullable();
             //$table->string('email', 128)->nullable();
             $table->timestamps();
@@ -39,4 +39,11 @@ class CreateReceptionsTable extends Migration
     {
         Schema::dropIfExists('receptions');
     }
+
+    /* EN EL CASO DE TENER QUE MODIFICAR LOS ESTADOS
+
+    alter table receptions MODIFY column
+    status enum('WAITING','PROCESS', 'RECEIVED ', 'REPAIRING') default 'WAITING';
+
+    */
 }

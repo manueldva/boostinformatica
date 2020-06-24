@@ -70,8 +70,8 @@
 	{{ form::text('battery', null, ['class' => 'form-control', 'id' => 'battery']) }}
 </div>
 <div class="form-group  col-md-6">
-	{{ form::label('charger', 'Cargador (Opcional):') }}
-	{{ form::text('charger', null, ['class' => 'form-control', 'id' => 'charger']) }}
+	{{ form::label('charge', 'Cargador (Opcional):') }}
+	{{ form::text('charge', null, ['class' => 'form-control', 'id' => 'charge']) }}
 </div>
 
 <div class="form-group">

@@ -16,7 +16,7 @@ class AddModeloToReceptionsTable extends Migration
         Schema::table('receptions', function (Blueprint $table) {
             $table->string('model', 500)->nullable();
             $table->string('battery', 500)->nullable();
-            $table->string('charger', 500)->nullable();
+            $table->string('charge', 500)->nullable();
             
         });
     }

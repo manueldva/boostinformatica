@@ -26,9 +26,12 @@ class ReceptionUpdateRequest extends FormRequest
         $rules = [
             //'client_id'     => 'required',
             'equipment_id'  => 'required',
-            'description'   => 'required',
+            'description'   => 'required|max:512:',
             'reason_id'     => 'required',
-            'concept'       => 'required'
+            'concept'       => 'required|max:4000',
+            'model'         => 'max:500',
+            'battery'       => 'max:500',
+            'charge'        => 'max:500',
             //'status' => 'required|in:WAITING,RECEIVED'
 
         ];

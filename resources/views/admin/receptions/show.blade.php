@@ -22,6 +22,9 @@
 					<p> <strong>Cliente:</strong> {{ $reception->client->name }}</p>
 					
 					<p> <strong>Equipo:</strong> {{ $reception->equipment->description }}</p>
+					@if($reception->model)
+						<p> <strong>Modelo:</strong> {{ $reception->model }}</p>
+                    @endif
 					<!--
 					@if($reception->imei)
 						<p> <strong>Numero de IMEI:</strong> {{ $reception->imei }}</p>
@@ -40,6 +43,12 @@
 						<p> <strong>Entrego Bateria/Cargador:</strong>No</p>
 					@else
 						<p> <strong>Entrego Bateria/Cargador:</strong>Si</p>
+                    @endif
+                    @if($reception->battery)
+						<p> <strong>Bateria:</strong> {{ $reception->battery }}</p>
+                    @endif
+                    @if($reception->charge)
+						<p> <strong>Cardador:</strong> {{ $reception->charge }}</p>
                     @endif
 
 					@if($reception->file)

@@ -72,7 +72,15 @@ exit();*/
 		</td>
       </tr>
       <tr>
-        <td colspan="4">Recibi (mos) un (a): <strong>  {{ $reception->equipment->description }} </strong></td>
+        <td colspan="2">Recibi (mos) un (a): <strong>  {{ $reception->equipment->description }} </strong></td>
+        <td colspan="2">Modelo: <strong>  {{ $reception->model }} </strong></td>
+      </tr>
+      <tr>
+        <td colspan="4">&nbsp;</td>
+      </tr>
+       <tr>
+        <td colspan="2">Bateria: <strong>  {{ $reception->battery }} </strong></td>
+        <td colspan="2">Cargador: <strong>  {{ $reception->charge }} </strong></td>
       </tr>
       <tr>
         <td colspan="4">&nbsp;</td>

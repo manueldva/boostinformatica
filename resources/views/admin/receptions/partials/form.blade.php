@@ -20,25 +20,14 @@
 	@endif
 </div>
 
-<div class="form-group">
+<div class="form-group  col-md-6">
 	{{ form::label('equipment_id', 'Equipo:') }}
 	{{ form::select('equipment_id', $equipments, null, ['class' => 'form-control','placeholder' => 'Seleccionar...'] ) }}
 </div>
-<div class="form-group col-md-2">
-
-						{{ form::label('year', 'Año:') }}
-
-						{{ form::select('year', [],[], ['class' => 'form-control'] ) }}
-					</div>
-
-
-					<div class="form-group col-md-2">
-
-						{{ form::label('month', 'Meses:') }}
-
-						{{ form::select('month', [], null, ['class' => 'form-control', 'placeholder' => 'Seleccionar...'] ) }}
-					</div>
-
+<div class="form-group  col-md-6">
+	{{ form::label('model', 'Modelo (Opcional):') }}
+	{{ form::text('model', null, ['class' => 'form-control', 'id' => 'model']) }}
+</div>
 <!--
 <div class="form-group">
 	{{ form::label('imei', 'Numero de IMEI (Opcional):') }}
@@ -74,6 +63,15 @@
 			{{ Form::radio('drums','YES')}} Si
 		</label>
 	</div>
+</div>
+
+<div class="form-group  col-md-6">
+	{{ form::label('battery', 'Bateria (Opcional):') }}
+	{{ form::text('battery', null, ['class' => 'form-control', 'id' => 'battery']) }}
+</div>
+<div class="form-group  col-md-6">
+	{{ form::label('charger', 'Cargador (Opcional):') }}
+	{{ form::text('charger', null, ['class' => 'form-control', 'id' => 'charger']) }}
 </div>
 
 <div class="form-group">

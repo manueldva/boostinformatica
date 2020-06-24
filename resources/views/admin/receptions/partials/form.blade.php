@@ -24,6 +24,20 @@
 	{{ form::label('equipment_id', 'Equipo:') }}
 	{{ form::select('equipment_id', $equipments, null, ['class' => 'form-control','placeholder' => 'Seleccionar...'] ) }}
 </div>
+<div class="form-group col-md-2">
+
+						{{ form::label('year', 'Año:') }}
+
+						{{ form::select('year', [],[], ['class' => 'form-control'] ) }}
+					</div>
+
+
+					<div class="form-group col-md-2">
+
+						{{ form::label('month', 'Meses:') }}
+
+						{{ form::select('month', [], null, ['class' => 'form-control', 'placeholder' => 'Seleccionar...'] ) }}
+					</div>
 
 <!--
 <div class="form-group">

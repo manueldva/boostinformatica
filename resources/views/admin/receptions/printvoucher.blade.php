@@ -86,10 +86,11 @@ exit();*/
       <tr>
          <td colspan="4">Presupuesto $: {{ $reception->budget }}<strong></strong></td>
       </tr>
+      <!--
       <tr>
         <td colspan="4"> &nbsp;<strong>  </strong></td>
       </tr>
-
+      -->
       <tr>
       	<td colspan="2">
         <table class="collapse">

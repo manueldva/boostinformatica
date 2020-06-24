@@ -78,7 +78,7 @@ exit();*/
         <td colspan="4">&nbsp;</td>
       </tr>
       <tr>
-        <td colspan="4">en Concepto de: <strong>{{ $reception->reason->description }} </strong></td>
+        <td colspan="4">Falla: <strong>{{ $reception->concept }} </strong></td>
       </tr>
       <tr>
         <td colspan="4">&nbsp;</td>

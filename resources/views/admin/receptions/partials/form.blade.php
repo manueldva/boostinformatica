@@ -47,7 +47,7 @@
 </div>
 
 <div class="form-group">
-	{{ form::label('concept', 'Concepto:') }}
+	{{ form::label('concept', 'Falla:') }}
 	{{ form::textarea('concept', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">

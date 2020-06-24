@@ -29,7 +29,7 @@ class ReceptionStoreRequest extends FormRequest
             'description'   => 'required',
             'reason_id'     => 'required',
             'concept'       => 'required',
-            'status'        => 'required|in:PROCESS,RECEIVED'
+            //'status'        => 'required|in:PROCESS,RECEIVED'
 
         ];
 

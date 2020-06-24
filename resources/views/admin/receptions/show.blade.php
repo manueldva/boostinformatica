@@ -31,7 +31,7 @@
 
 					<p> <strong>Razón:</strong> {{ $reception->reason->description }}</p>
 
-					<p> <strong>Concepto:</strong> {{ $reception->concept }}</p>
+					<p> <strong>Falla:</strong> {{ $reception->concept }}</p>
 					@if($reception->budget)
 						<p> <strong>Presupuesto:</strong> {{ $reception->budget }}</p>
                     @endif

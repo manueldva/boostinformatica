@@ -65,6 +65,11 @@
                                             Informe Costo/Venta
                                         </a>
                                     </li>
+                                    <li>
+                                        <a id="reports" href="{{ route('reports.index') }}">
+                                            Informes
+                                        </a>
+                                    </li>
                                 </ul>
                             <li>
                                 <a id="deliveries" href="{{ route('deliveries.index') }}">Entregas</a>
@@ -230,6 +235,9 @@
             $('#empresas').css('background','#B5DEF7');
         
         } else if (pathname.indexOf('showdeliveryreport') != -1) {
+
+            $('#reports').css('background','#B5DEF7');
+        } else if (pathname.indexOf('reports') != -1) {
 
             $('#reports').css('background','#B5DEF7');
         }

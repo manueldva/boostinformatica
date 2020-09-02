@@ -50,3 +50,5 @@ route::put('/setting/{id}',		'Admin\ManageuserController@setting')->name('settin
 
 
 //
+
+route::resource('reports', 		'Admin\ReportsController');

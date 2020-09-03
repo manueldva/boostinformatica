@@ -99,18 +99,26 @@ class ReportsController extends Controller
 
     public function informeequiporeparadoprint($fechadesde, $fechahasta)
     {
+        //dd($fechadesde);
         
         $deliveries1 = 
         "select 
-            C.id client_id,
+            R.id reception_id,
             C.name,
-            D.deliverdate 
+            DATE_FORMAT(D.deliverdate , '%d-%m-%Y') deliverdate,
+            
+            CASE
+                WHEN D.repaired = 'YES' THEN 'SI'
+                ELSE 'NO'
+            END repaired,
+            D.workPrice,
+            D.cost
             from receptions R
             inner join deliveries D on R.id = D.reception_id
             inner join clients C on R.client_id =  C.id
             where 
 
-            R.status = 'REPAIRING' and D.deliverDate between '" . $fechadesde . "' and '" . $fechahasta . "'
+             DATE_FORMAT(D.deliverdate , '%Y-%m-%d') between '" . $fechadesde . "' and '" . $fechahasta . "'
             order by D.deliverDate";
        
         $deliveries = DB::select($deliveries1);

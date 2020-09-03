@@ -7,7 +7,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <strong>Informe Equipos Reparados</strong>
+                    <strong>Informe Trabajos Realizados</strong>
                 </div>
         
                 <div class="panel-body">

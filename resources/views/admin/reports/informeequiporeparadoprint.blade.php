@@ -2,7 +2,7 @@
 
 
 @section('cuerpo')
-<h3><center>Listado de Reparaciones</h3>
+<h3><center>Listado de Trabajos Realizados</h3>
 
 <div class="portlet-body">
 	<table id="clientes" class="table table-striped table-bordered table-advance table-hover table-responsive tablesorter">
@@ -11,7 +11,7 @@
 			<tr>
 	            <th>
 					<center>
-						<i></i>  Nro Cliente
+						<i></i>  Codigo
 					</center>	
 				</th>
 				<th>
@@ -24,6 +24,22 @@
 						<i></i> Fecha Entrega
 					</center>
 				</th>
+				<th>
+					<center>
+						<i></i> Reparado
+					</center>
+				</th>
+				<th>
+					<center>
+						<i></i> Costo
+					</center>
+				</th>
+				
+				<th>
+					<center>
+						<i></i> P. Trabajo
+					</center>
+				</th>
 				
 			</tr>
 		</thead>
@@ -33,8 +49,8 @@
                 <tr>
                     <td class="col-md-4"><center>
                     <?php 
-						if (isset($delivery->client_id )) {
-							echo $delivery->client_id;
+						if (isset($delivery->reception_id )) {
+							echo $delivery->reception_id;
 						} 
 					?></center>
 					</td>	
@@ -49,6 +65,27 @@
                     <?php 
 						if (isset($delivery->deliverdate )) {
 							echo $delivery->deliverdate;
+						} 
+					?></center>
+					</td>
+					<td class="col-md-4"><center>
+                    <?php 
+						if (isset($delivery->repaired )) {
+							echo $delivery->repaired;
+						} 
+					?></center>
+					</td>
+					<td class="col-md-4"><center>
+                    <?php 
+						if (isset($delivery->cost )) {
+							echo $delivery->cost;
+						} 
+					?></center>
+					</td>
+					<td class="col-md-4"><center>
+                    <?php 
+						if (isset($delivery->workPrice )) {
+							echo $delivery->workPrice;
 						} 
 					?></center>
 					</td>

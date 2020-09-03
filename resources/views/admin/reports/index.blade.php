@@ -17,7 +17,7 @@
                 <br>
                 <div class="form-group" style="font-size:16pt">
                     <a href="{{ route('reports.show', 1) }}" style="color:#235B88;">
-                        Inf. Equipos Reparados 
+                        Inf. Trabajos Realizados 
                     </a>
                 </div>
                 <!--

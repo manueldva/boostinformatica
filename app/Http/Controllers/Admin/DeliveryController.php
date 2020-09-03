@@ -173,7 +173,7 @@ class DeliveryController extends Controller
         $delivery = Delivery::find($id);
 
         $reception = Reception::find($delivery->reception_id);
-            $reception->status = 'RECEIVED';
+            $reception->status = 'PROCESS';
         $reception->save();
 
         $delivery->delete();

@@ -69,7 +69,7 @@
 											</a>
 										</td>
 										@if(Auth::user()->userType !== 'READONLY')
-											@if($reception->status !== 'REPAIRING')
+											@if($reception->status !== 'REPAIRING' && $reception->status !== 'REPAIRED')
 												<td width="10px">
 													<a href="{{ route('receptions.edit', $reception->id) }}" class="btn btn-sm btn-default">
 														Editar

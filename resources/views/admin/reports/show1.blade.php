@@ -44,12 +44,13 @@
                             </table>
                         </div>    
                     </div>
+                    <!--
 
                     <div class="form-group">
                         {{ form::label('usuario', 'Vendedor *') }}
                         {{ form::select('usuario', [],  null, ['class' => 'form-control','placeholder' => 'Seleccionar'] ) }}
                     </div>
-
+                    -->
 
                     <br>
                     <!--<a  type="submit"  class="btn btn btn-primary" target="_blank">
@@ -71,5 +72,24 @@
 </div>
 
 @endsection
+
+@section('scripts')
+   <script type="text/javascript">
+
+        $('#imprimir').on('click', function(e){
+            
+           
+            var fechadesde = $("#fechadesde").val();
+            var fechahasta = $("#fechahasta").val();
+            e.preventDefault();
+            window.open("{{url('informeequiporeparadoprint')}}/" + fechadesde + "/" + fechahasta);
+
+
+        });
+
+        
+    </script>
+@endsection
+
 
 

@@ -17,7 +17,7 @@
 
 <div class="form-group">
 	{{ form::label('stock', 'Stock:') }}
-	{{ form::number('stock', null, ['class' => 'form-control', 'id' => 'stock']) }}
+	{{ form::number('stock', null, ['class' => 'form-control', 'id' => 'stock', 'min' => '0' ]) }}
 </div>
 
 <div class="form-group">

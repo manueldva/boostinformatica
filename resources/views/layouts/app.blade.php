@@ -72,6 +72,9 @@
                                     </li>
                                 </ul>
                             <li>
+                                <a id="products" href="{{ route('products.index') }}">Productos</a>
+                            </li> 
+                            <li>
                                 <a id="deliveries" href="{{ route('deliveries.index') }}">Entregas</a>
                             </li>
                             <li>
@@ -224,6 +227,10 @@
         }else if (pathname.indexOf('deliveries') != -1) {
 
             $('#deliveries').css('background','#B5DEF7');
+
+        }else if (pathname.indexOf('products') != -1) {
+
+            $('#products').css('background','#B5DEF7');
         
         } else if (pathname.indexOf('equipments') != -1) {
 

@@ -11,7 +11,7 @@ class Producttype extends Model
 	];
 	    
 
-    /*public function receptions(){
-    	return $this->HasMany(Reception::class);
-    }*/
+    public function products(){
+    	return $this->HasMany(Product::class);
+    }
 }

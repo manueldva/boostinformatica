@@ -10,7 +10,7 @@ use App\Http\Requests\ProducttypeUpdateRequest;
 use Alert;
 
 use App\Producttype;
-
+use App\Product;
 
 class ProducttypeController extends Controller
 {
@@ -111,11 +111,11 @@ class ProducttypeController extends Controller
     public function destroy($id)
     {
         
-        /*if(Reception::where('reason_id', $id)->first()) 
+        if(Product::where('producttype_id', $id)->first()) 
         {
             Alert::error('No se puede eliminar el registro')->persistent('Cerrar');
             return back();
-        }*/
+        }
 
         Producttype::find($id)->delete();
 

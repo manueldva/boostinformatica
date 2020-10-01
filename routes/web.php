@@ -39,6 +39,9 @@ route::get('/printvoucherdelivery/{id}',		'Admin\DeliveryController@printvoucher
 route::get('/showdeliveryreport/{id}',		'Admin\DeliveryController@showdeliveryreport')->name('showdeliveryreport');
 route::get('/deliveryreport/{year}/{month}',		'Admin\DeliveryController@deliveryreport')->name('deliveryreport');
 
+
+route::resource('products', 		'Admin\ProductController');
+
 	//complementos
 route::resource('equipments', 		'Admin\EquipmentController');
 route::resource('reasons', 		'Admin\ReasonController');

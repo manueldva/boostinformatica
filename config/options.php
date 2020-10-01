@@ -23,7 +23,12 @@ return array(
 		'client'    => 'Cliente',
 		'address'	=> 'Dirección'/*,
 		'status'	=> 'Estado'*/
-	]  
+	],
+
+	'products' => [
+		''    		=> 'Seleccionar',
+		'description'    => 'Descripcion'
+	]    
 
 
 

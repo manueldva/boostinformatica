@@ -95,6 +95,9 @@
                                         <a href="{{ route('reasons.index') }}">
                                             Razones
                                         </a>
+                                        <a href="{{ route('producttypes.index') }}">
+                                            Tipo de Productos
+                                        </a>
                                     </li>
                                 </ul>
                                 
@@ -227,6 +230,10 @@
             $('#complements').css('background','#B5DEF7');
         
         } else if (pathname.indexOf('reasons') != -1) {
+
+            $('#complements').css('background','#B5DEF7');
+
+        } else if (pathname.indexOf('producttypes') != -1) {
 
             $('#complements').css('background','#B5DEF7');
 

@@ -42,6 +42,7 @@ route::get('/deliveryreport/{year}/{month}',		'Admin\DeliveryController@delivery
 	//complementos
 route::resource('equipments', 		'Admin\EquipmentController');
 route::resource('reasons', 		'Admin\ReasonController');
+route::resource('producttypes', 		'Admin\ProducttypeController');
 
 	//para manejar tipos de usuarios mas adelante
 route::resource('manageusers', 		'Admin\ManageuserController');

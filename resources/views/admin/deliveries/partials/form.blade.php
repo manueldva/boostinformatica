@@ -33,6 +33,17 @@
 	{{ form::label('observationCost', 'Observación Costo (Opcional):') }}
 	{{ form::textarea('observationCost', null, ['class' => 'form-control']) }}
 </div>
+<div class="form-group">
+	<div class="form-group">
+		{{ form::label('salecondition', 'Cond. Venta: ') }}
+		<label>
+			{{ Form::radio('salecondition','CASH')}} Efectivo
+		</label>
+		<label>
+			{{ Form::radio('salecondition','CREDITCARD')}} T. Credito
+		</label>
+	</div>
+</div>
 
 <div class="form-group">
 	{{ form::label('workPrice', 'Precio del Trabajo:') }}

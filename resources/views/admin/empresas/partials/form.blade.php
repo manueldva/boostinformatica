@@ -51,6 +51,10 @@
 	{{ form::label('warranty', 'Dias de Garantia (opcional):') }}
 	{{ form::number('warranty', null, ['class' => 'form-control', 'id' => 'warranty']) }}
 </div>
+<div class="form-group">
+	{{ form::label('observationguarantee', 'Observacion Garantina:') }}
+	{{ form::textarea('observationguarantee', null, ['class' => 'form-control']) }}
+</div>
 
 <div class="form-group">
 	{{ form::label('observations', 'Observaciones:') }}

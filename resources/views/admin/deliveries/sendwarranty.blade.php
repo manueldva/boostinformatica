@@ -262,7 +262,23 @@
                             S/D
                         @endif
                     </td>
+
                     <td colspan="2" class="brand-st-rigth">
+                        
+                    </td>
+                    <td class="pagina"> <span lass="pagenum"></span></td>
+
+                </tr>
+                <tr>
+                    <td colspan="1" class="brand-st-left">
+                        @if(isset($empresa->phone))
+                           Telefono: {{$empresa->phone}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @else
+                           &nbsp;
+                        @endif
+                    </td>
+                    
+                    <td colspan="3" class="brand-st-rigth">
                         
                     </td>
                     <td class="pagina"> <span lass="pagenum"></span></td>
@@ -284,7 +300,7 @@
 
                 </tr>
                 <tr>
-                    <th style="width: 10%">Cliente</th>
+                    <th style="width: 10%">Cliente:</th>
                     <th class="atributo divisor-vertical" style="width: 40%">
                         {{ $delivery->reception->client->name }}
                     </th>
@@ -294,11 +310,19 @@
 
                 </tr>
                 <tr>
-                    <th style="width: 10%">Nro Orden</th>
+                    <th style="width: 10%">Nro Orden:</th>
                     <th style="width: 40%" class="atributo divisor-vertical">{{$delivery->reception->id}} </th>
                     <th style="width: 10%">C. Venta :</th>
                     <th style="width: 40%" class="atributo">
-                       fulanito
+                       @if(isset($delivery->salecondition))
+                           @if( $delivery->salecondition = 'CASH' )
+                                Efectivo
+                            @else
+                                T. Credito
+                            @endif
+                        @else
+                            -
+                        @endif 
                     </th>
 
                 </tr>
@@ -370,7 +394,7 @@
             <thead>
                 <tr>
                     <th style="width: 33%">
-                        {{ $empresa->observations }}
+                        {{ $empresa->observationguarantee }}
                     </th>
                     
                 </tr>
@@ -393,7 +417,7 @@
                     <th style="width: 33%">
                         
                        <br>
-                        ...........................
+                        ....................................
                         <br>
                         Firma y aclaración
 

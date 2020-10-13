@@ -17,7 +17,7 @@
 						Imprimir Comprobante
 					</a>
 					&nbsp;
-					<a  href="{{ route('printvoucherdelivery', $delivery->id) }}" class="btn btn-sm btn-default pull-right" target="_blank">
+					<a  href="{{ route('printsendwarranty', $delivery->id) }}" class="btn btn-sm btn-default pull-right" target="_blank">
 						
 						Imprimir Garantia
 					</a>

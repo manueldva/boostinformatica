@@ -230,6 +230,43 @@ class DeliveryController extends Controller
         //return $id;
     }
 
+    
+    public function printsendwarranty($id)
+    {
+        /*$delivery = Delivery::where('id', $id)->get();
+        $delivery['0']['deliverDate'] = FechaHelper::getFechaImpresion($delivery['0']['deliverDate']);*/
+
+        $empresa = Empresa::first();
+        $empresa->inicioactividades = FechaHelper::getFechaImpresion($empresa->inicioactividades);
+
+        $delivery = Delivery::find($id);
+
+        //$delivery->status = 'PRINTED';
+        //$delivery->save();
+
+        $delivery->deliverDate = FechaHelper::getFechaImpresion($delivery->deliverDate);
+        /*highlight_string(var_export($delivery->reception->client, true));
+        exit();*/
+
+        //dd($delivery->reception->id);
+
+        $pdf = PDF::loadView('admin.deliveries.sendwarranty', compact('delivery', 'empresa'));
+
+
+        return $pdf->stream('Garantia.pdf');
+
+        /*$pdf = PDF::loadView('admin.deliveries.sendwarranty');
+
+
+        return $pdf->stream('reporte.pdf');*/
+
+        //return $pdf->download('informe.pdf');
+
+        //return $id;
+    }
+
+
+
     public function showdeliveryreport($id)
     {
             

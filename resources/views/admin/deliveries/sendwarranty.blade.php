@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Garantia</title>
     <style>
             @page {
                 margin: 0cm 0cm;
@@ -227,19 +227,28 @@
             <thead>
                 <tr>
                     <th style="width: 47%" class="brand-st-left">
-                        <strong class="company">-</strong>
+                        <strong class="company">
+                            @if(isset($empresa->nombre))
+                                {{$empresa->nombre}} 
+                            @else
+                                "Nombre Empresa"
+                            @endif 
+                        </strong>
                     </th>
                     <th class="letra" rowspan="2" style="width: 6%">
-                        R
+                       
                     </th>
                     <th style="width: 18%;text-align: left" class="brand-st-rigth">
-                        <strong>Nro. Remito:</strong> <br>
+                        <strong>Recibo Garantia:</strong> 
+                        <br>
+                        <br>
                         <strong>Fecha:</strong>
                     </th>
                     <th style="width: 17%" class="nro_remito">
-                           34234
+                            0001 - {{ $delivery->reception->id }}
                             <br> 
-                           12-01-2012
+                            <br> 
+                           {{ $delivery->deliverDate }} 
                     </th>
                     <th style="width: 12%" class="barras">
                         <br> <p class="etiqueta_copia"></p> 
@@ -247,15 +256,14 @@
                 </tr>
                 <tr>
                     <td colspan="1" class="brand-st-left">
-                        <p> San Blas 1760 | 1416 | Capital | Argentina<br> Tel 5274-8500| eMail: info@orien.com.ar<br> I.V.A. Responsable Inscripto | Imp. Internos: No Responsable
-                        </p>
+                        @if(isset($empresa->direccion))
+                            {{$empresa->direccion}}
+                        @else
+                            S/D
+                        @endif
                     </td>
                     <td colspan="2" class="brand-st-rigth">
-                        <p>
-                            C.U.I.T.: 30686262312<br> 
-                            ING. BRUTOS: 0989034-03<br> 
-                            INICIO DE ACTIVIDAD: 01/11/1996
-                        </p>
+                        
                     </td>
                     <td class="pagina"> <span lass="pagenum"></span></td>
 
@@ -265,7 +273,7 @@
 
         </table>
 
-        <table class="entrega">
+        <table style="border-collapse: collapse;">
             <thead>
                 <tr>
                     <th style="width: 10%"></th>
@@ -278,45 +286,83 @@
                 <tr>
                     <th style="width: 10%">Cliente</th>
                     <th class="atributo divisor-vertical" style="width: 40%">
-                        cosme
+                        {{ $delivery->reception->client->name }}
                     </th>
-                    <th style="width:10%">TRANSPORTE:</th>
-                    <th style="width: 40%" class="atributo">393938</th>
+                    <th style="width:10%">Equipo:</th>
+                    <th style="width: 40%" class="atributo">{{ $delivery->reception->equipment->description }}</th>
 
 
                 </tr>
                 <tr>
-                    <th style="width: 10%">CUIT</th>
-                    <th style="width: 40%" class="atributo divisor-vertical">20334562825</th>
-                    <th style="width: 10%">CHOFER:</th>
+                    <th style="width: 10%">Nro Orden</th>
+                    <th style="width: 40%" class="atributo divisor-vertical">{{$delivery->reception->id}} </th>
+                    <th style="width: 10%">C. Venta :</th>
                     <th style="width: 40%" class="atributo">
                        fulanito
                     </th>
 
                 </tr>
                 <tr>
-                    <th style="width: 10%">Domicilio</th>
-                    <th style="width: 40%" class="atributo divisor-vertical">
-                        Formosa
-                    </th>
-                    <th style="width: 10%">DOMINIO</th>
-                    <th style="width: 40%" class="atributo">ght456</th>
+                    <br>
+                    <hr>
                 </tr>
             </thead>
 
         </table>
 
-        <table class="observaciones">
-            <tr>
-                <td valign="top" style="width:10%">Observaciones:</td>
-                <td class="observaciones-texto" style="width:90%;">otros</td>
+        <main>
+        <br>
+       
+        <table class="articulos" id="tabla1" name="tabla1">
 
-            </tr>
-            <tr>
-                <td valign="top">Nro Pedido: </td>
-                <td class="">referencia</td>
-            </tr>
+            <thead class="item-head">
+                <tr>
+                    <td style="width: 10%">
+                        Cod.
+                    </td>
+                    <td style="width: 35%">
+                        Descripción
+                    </td>
+                    <td style="width: 15%">
+                        Cantidad
+                    </td>
+                    <td style="width: 10%">
+                        Precio
+                    </td>
+                    <td style="width: 10%">
+                        Total
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+        
+                <tr>
+                    <td>
+                        {{$delivery->reception->id }}
+                    </td>
+                    <td>
+                       {{$delivery->reception->reason->description}}
+                    </td>
+                    <td>
+                       1
+                    </td>
+                    <td>
+                       
+                    </td>
+                    <td>
+                        {{ $delivery->workPrice }}
+                    </td>
+                </tr>
+               
+
+            </tbody>
+            
         </table>
+        
+        
+    </main>
+
+       
     </header>
 
     <footer>
@@ -324,125 +370,46 @@
             <thead>
                 <tr>
                     <th style="width: 33%">
+                        {{ $empresa->observations }}
                     </th>
+                    
+                </tr>
+            </thead>
+    
+        </table>
+        <br>
+         <table>
+            <thead>
+                <tr>
                     <th style="width: 33%">
-                        CAI: 22345
+                        Retira conforme. Acepta términos de la garantía escrita.
                     </th>
+                    
                     <th style="width: 33%">
-                        VENCIMIENTO: 21-12-2020
+                        Subtotal  {{ $delivery->workPrice }}
+                    </th>
+                </tr>
+                 <tr>
+                    <th style="width: 33%">
+                        
+                       <br>
+                        ...........................
+                        <br>
+                        Firma y aclaración
+
+                    </th>
+
+                    <th style="width: 33%">
+                       
                     </th>
                 </tr>
             </thead>
     
         </table>
-        <table class="firma">
-            <thead>
-                <tr>
-                    <td>Bultos:</td>
-                    <td>_______</td>
-                    <td>Peso Aprox:</td>
-                    <td>_____________</td>
-                    <td>Recibí conforme (firma y aclaracion)</td>
-                    <td align="right">_________________________________</td>
-                </tr>
-            </thead>
-        </table>
+      
     </footer>
 
-    <main>
-       
-        <table class="articulos" id="tabla1" name="tabla1">
-
-            <thead class="item-head">
-                <tr>
-                    <td style="width: 10%">
-                        SKU
-                    </td>
-                    <td style="width: 35%">
-                        Articulo
-                    </td>
-                    <td style="width: 15%">
-                        Ean13
-                    </td>
-                    <td style="width: 10%">
-                        Lote
-                    </td>
-                    <td style="width: 10%">
-                        Vencimiento
-                    </td>
-                    <td style="width: 10%">
-                        UM
-                    </td>
-                    <td style="width: 10%">
-                        Cantidad
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                
-               
-
-            </tbody>
-            <tfoot class="footer">
-                <tr>
-                    <td colspan="2" tipo_etiqueta="tabla1" class="etiqueta_copia">TOTAL de LINEAS</td>
-                    <td colspan="2">12</td>
-                    <td colspan="3" class="cantidad">200</td>
-                </tr>
-                <tr>
-                    <td colspan="7" class="original-duplicado"> <span class="original-duplicado"> ORIGINAL</span></td>
-                </tr>
-            </tfoot>
-        </table>
-        <p style="page-break-after: always;">     
-        </p>
-        
-
-        <table class="articulos" id="tabla2" name="tabla2" style="counter-reset: page;">
-
-            <thead class="item-head">
-                <tr>
-                    <td style="width: 10%">
-                        SKU
-                    </td>
-                    <td style="width: 35%">
-                        Articulo
-                    </td>
-                    <td style="width: 15%">
-                        Ean13
-                    </td>
-                    <td style="width: 10%">
-                        Lote
-                    </td>
-                    <td style="width: 10%">
-                        Vencimiento
-                    </td>
-                    <td style="width: 10%">
-                        UM
-                    </td>
-                    <td style="width: 10%">
-                        Cantidad
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                
-               
-            </tbody>
-            <tfoot class="footer">
-                <tr>
-                    <td colspan="2" class="etiqueta_copia">TOTAL de LINEAS</td>
-                    <td colspan="2">12</td>
-                    <td colspan="3" class="cantidad">12</td>
-                </tr>
-                <tr>
-                    <td colspan="7" class="original-duplicado"> <span class="original-duplicado"> DUPLICADO</span></td>
-                </tr>
-            </tfoot>
-        </table>
-
-    </main>
-
+    
 
     
 </body>

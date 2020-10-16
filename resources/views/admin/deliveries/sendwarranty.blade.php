@@ -365,7 +365,11 @@
                         {{$delivery->reception->id }}
                     </td>
                     <td>
-                       {{$delivery->reception->reason->description}}
+                        @if(isset($delivery->workDone))
+                            {{$delivery->workDone}}
+                        @else
+                            -
+                        @endif
                     </td>
                     <td>
                        1

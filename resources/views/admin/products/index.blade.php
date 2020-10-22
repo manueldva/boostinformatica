@@ -48,6 +48,7 @@
 									<th> Codigo</th>
 									<th> Descripcion</th>
 									<th> Tipo Producto</th>
+									<th> Precio</th>
 									<th colspan="3">&nbsp;</th>
 								</tr>
 							</thead>
@@ -57,6 +58,7 @@
 										<td>{{ $product->id }}</td>
 										<td>{{ $product->description }}</td>
 										<td>{{ $product->producttype->description ?? '-' }}</td>
+										<td>{{ $product->price ?? '-' }}</td>
 										<td width="10px">
 											<a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-default">
 												Ver

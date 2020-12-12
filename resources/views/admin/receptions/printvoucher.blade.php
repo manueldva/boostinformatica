@@ -42,7 +42,7 @@ exit();*/
 
         <td><center>&nbsp;&nbsp;&nbsp;</center></td>
 
-        <td><strong>N° 0002 - {{$reception->id}}<br>
+        <td><strong>N° 0002 -  {{$empresa->letras}}{{$reception->id}}<br>
         FECHA: {{$reception->description}}<br>
         <!-- CUIT. N°:  {{ isset($empresa->cuit) ? $empresa->cuit : "-"}} <br>
         ING. BRUTOS:  {{ isset($empresa->ingresosbrutos) ? $empresa->ingresosbrutos :  "-" }} <br>

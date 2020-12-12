@@ -245,7 +245,7 @@
                         <strong>Fecha:</strong>
                     </th>
                     <th style="width: 17%" class="nro_remito">
-                            0001 - {{ $delivery->reception->id }}
+                            0001 - {{$empresa->letras}}{{ $delivery->reception->id }}
                             <br> 
                             <br> 
                            {{ $delivery->deliverDate }} 

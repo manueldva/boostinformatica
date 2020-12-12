@@ -61,6 +61,11 @@
 	{{ form::textarea('observations', null, ['class' => 'form-control']) }}
 </div>
 
+<div class="form-group">
+	{{ form::label('letras', 'Letras en el remito:') }}
+	{{ form::text('letras', null, ['class' => 'form-control']) }}
+</div>
+
 
 <div class="form-group">
 	<button type="submit" class="btn btn-sm btn-primary"> Guardar</button>

@@ -46,7 +46,7 @@ exit();*/
 
         <td><center>&nbsp;&nbsp;&nbsp;</center></td>
 
-        <td><strong>N° 0001 - {{$delivery->reception->id}}<br>
+        <td><strong>N° 0001 - {{$empresa->letras}}{{$delivery->reception->id}}<br>
         FECHA: {{$delivery->deliverDate}}<br>
         <!--CUIT. N°:  {{ isset($empresa->cuit) ? $empresa->cuit : "-"}} <br>
         ING. BRUTOS:  {{ isset($empresa->ingresosbrutos) ? $empresa->ingresosbrutos :  "-" }} <br>

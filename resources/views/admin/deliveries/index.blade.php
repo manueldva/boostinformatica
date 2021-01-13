@@ -67,11 +67,11 @@
 									
 										<td width="10px">
 											@if(Auth::user()->userType !== 'READONLY')
-												@if($delivery->status == 'NOTPRINTED')
+												{{-- @if($delivery->status == 'NOTPRINTED') --}}
 													<a href="{{ route('deliveries.edit', $delivery->id) }}" class="btn btn-sm btn-default">
 														Editar
 													</a>
-												@endif
+												{{-- @endif --}}
 											@endif
 										</td>
 										<td width="10px">

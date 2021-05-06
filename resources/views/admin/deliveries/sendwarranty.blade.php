@@ -423,7 +423,7 @@
                        <br>
                         ....................................
                         <br>
-                        Firma y aclaración
+                        Controlado
 
                     </th>
 

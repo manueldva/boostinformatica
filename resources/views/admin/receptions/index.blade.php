@@ -69,12 +69,12 @@
 											</a>
 										</td>
 										@if(Auth::user()->userType !== 'READONLY')
+											<td width="10px">
+												<a href="{{ route('receptions.edit', $reception->id) }}" class="btn btn-sm btn-default">
+													Editar
+												</a>
+											</td>
 											@if($reception->status !== 'REPAIRING' && $reception->status !== 'REPAIRED')
-												<td width="10px">
-													<a href="{{ route('receptions.edit', $reception->id) }}" class="btn btn-sm btn-default">
-														Editar
-													</a>
-												</td>
 												<td width="10px">
 													{!! Form::model($reception, ['method' => 'delete', 'route' => ['receptions.destroy', $reception->id], 'class' =>'form-inline form-delete']) !!}
 													{!! Form::hidden('id', $reception->id) !!}

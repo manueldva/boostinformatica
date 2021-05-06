@@ -12,12 +12,9 @@
 
 <div class="form-group">
 	{{ form::label('client_id', 'Cliente:') }}
-	@if(isset($reception))
-		{{ form::text('clientname', $reception->client->name, ['class' => 'form-control', 'disabled']) }}
-	@else
 
-		{{ form::select('client_id', $clients, null, ['class' => 'form-control', 'placeholder' => 'Seleccionar...', 'id' => 'client_id' ] ) }}
-	@endif
+	{{ form::select('client_id', $clients, null, ['class' => 'form-control', 'placeholder' => 'Seleccionar...', 'id' => 'client_id' ] ) }}
+
 </div>
 
 <div class="form-group  col-md-6">
@@ -81,7 +78,7 @@
 
 
 @if (isset($reception))
-	@if($reception->status !== 'PROCESS')
+	@if($reception->status !== 'PROCESS' && $reception->status !== 'REPAIRING')
 		<div class="form-group">
 			{{ form::label('status', 'Estado:') }}
 			<label>

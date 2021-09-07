@@ -46,6 +46,7 @@ route::resource('products', 		'Admin\ProductController');
 	//complementos
 route::resource('equipments', 		'Admin\EquipmentController');
 route::resource('reasons', 		'Admin\ReasonController');
+route::resource('comes', 		'Admin\ComeController');
 route::resource('producttypes', 		'Admin\ProducttypeController');
 
 	//para manejar tipos de usuarios mas adelante

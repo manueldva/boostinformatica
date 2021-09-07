@@ -101,6 +101,9 @@
                                         <a href="{{ route('producttypes.index') }}">
                                             Tipo de Productos
                                         </a>
+                                        <a href="{{ route('comes.index') }}">
+                                            Publicidad
+                                        </a>
                                     </li>
                                 </ul>
                                 
@@ -241,6 +244,10 @@
             $('#complements').css('background','#B5DEF7');
 
         } else if (pathname.indexOf('producttypes') != -1) {
+
+            $('#complements').css('background','#B5DEF7');
+
+        } else if (pathname.indexOf('comes') != -1) {
 
             $('#complements').css('background','#B5DEF7');
 

@@ -14,7 +14,7 @@ class AddComesToReceptiosTable extends Migration
     public function up()
     {
         Schema::table('receptions', function (Blueprint $table) {
-            $table->integer('come_id')->unsigned();
+            $table->integer('come_id')->unsigned()->nullable();
             $table->foreign('come_id')->references('id')->on('comes')->onDelete('cascade')->onUpdate('cascade');
         });
     }

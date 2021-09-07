@@ -18,6 +18,7 @@ use App\Empresa;
 use App\Reception;
 use App\Client;
 use App\Reason;
+use App\Come;
 use App\Equipment;
 
 
@@ -71,8 +72,9 @@ class ReceptionController extends Controller
         //$clients    = Client::orderBy('name', 'ASC')->pluck('name', 'id');
         $reasons    = Reason::orderBy('description', 'ASC')->pluck('description' , 'id');
         $equipments = Equipment::orderBy('description', 'ASC')->pluck('description' , 'id');
+        $comes    = Come::orderBy('description', 'ASC')->pluck('description' , 'id');
 
-        return view('admin.receptions.create', compact('clients', 'reasons', 'equipments'));
+        return view('admin.receptions.create', compact('clients', 'reasons', 'equipments','comes'));
 
     }
 
@@ -155,8 +157,9 @@ class ReceptionController extends Controller
         $clients    = Client::orderBy('name', 'ASC')->pluck('name', 'id');
         $reasons    = Reason::orderBy('description', 'ASC')->pluck('description' , 'id');
         $equipments = Equipment::orderBy('description', 'ASC')->pluck('description' , 'id');
+        $comes    = Come::orderBy('description', 'ASC')->pluck('description' , 'id');
 
-        return view('admin.receptions.edit', compact('reception', 'clients', 'reasons', 'equipments'));
+        return view('admin.receptions.edit', compact('reception', 'clients', 'reasons', 'equipments','comes'));
     }
 
     /**

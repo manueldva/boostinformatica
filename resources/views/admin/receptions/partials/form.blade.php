@@ -71,9 +71,15 @@
 	{{ form::text('charge', null, ['class' => 'form-control', 'id' => 'charge']) }}
 </div>
 
+
 <div class="form-group">
 	{{ form::label('budget', 'Presupuesto (Opcional):') }}
 	{{ form::number('budget', null, ['class' => 'form-control', 'id' => 'budget', 'step' => '0.01']) }}
+</div>
+
+<div class="form-group">
+	{{ form::label('come_id', 'Publicidad:') }}
+	{{ form::select('come_id', $comes, null, ['class' => 'form-control','placeholder' => 'Seleccionar...'] ) }}
 </div>
 
 

@@ -55,6 +55,9 @@
 					<p> <strong>Imagen:</strong></p>
                         <img src="{{ $reception->file }}" class="img-responsive">
                     @endif
+					@if($reception->come_id)
+						<p> <strong>Publicidad:</strong> {{ $reception->come->description }}</p>
+                    @endif
 				</div>
 			</div>
 		</div>

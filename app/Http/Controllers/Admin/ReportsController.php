@@ -58,6 +58,8 @@ class ReportsController extends Controller
     {
         if($id == 1) { // ventas por repartidor
             return view('admin.reports.show1');
+        } else if ($id == 2) { // ventas por repartidor
+            return view('admin.reports.show2');
         }
 
     }
@@ -132,6 +134,44 @@ class ReportsController extends Controller
         //return $pdf->setPaper('Legal', 'landscape')->stream('informeequiporeparadoprint.pdf');
       
        return $pdf->setPaper('a4')->stream('informeequiporeparadoprint.pdf');
+        //echo 1;
+    }
+
+    public function informeclientepublicidadprint($fechadesde, $fechahasta)
+    {
+        //dd($fechadesde);
+        
+        $deliveries1 = 
+        "select 
+            R.id reception_id,
+            C.name,
+            DATE_FORMAT(D.deliverdate , '%d-%m-%Y') deliverdate,
+            
+            CASE
+                WHEN D.repaired = 'YES' THEN 'SI'
+                ELSE 'NO'
+            END repaired,
+            D.workPrice,
+            D.cost
+            from receptions R
+            inner join deliveries D on R.id = D.reception_id
+            inner join clients C on R.client_id =  C.id
+            where 
+
+             DATE_FORMAT(D.deliverdate , '%Y-%m-%d') between '" . $fechadesde . "' and '" . $fechahasta . "'
+            order by D.deliverDate";
+       
+        $deliveries = DB::select($deliveries1);
+        
+        
+        //dd($deliveries1);
+
+        $pdf = PDF::loadView('admin.reports.informeclientepublicidadprint', compact('deliveries'));
+            //$pdf->setPaper('Legal', 'landscape');
+
+        //return $pdf->setPaper('Legal', 'landscape')->stream('informeequiporeparadoprint.pdf');
+      
+       return $pdf->setPaper('a4')->stream('informeclientepublicidadprint.pdf');
         //echo 1;
     }
 }

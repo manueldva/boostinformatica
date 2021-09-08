@@ -100,16 +100,19 @@ class ReceptionController extends Controller
                 $reception = new Reception();     
         
                         $reception->id                  =    $request->get('codigo');
-                        $reception->client_id          =    $request->get('client_id');
+                        $reception->client_id          =     $request->get('client_id');
                         $reception->equipment_id        =    $request->get('equipment_id');
                         $reception->description         =    $request->get('description');
                         $reception->reason_id           =    $request->get('reason_id');
                         $reception->concept             =    $request->get('concept');
                         $reception->status              =    $request->get('status');
                         $reception->budget              =    $request->get('budget');
-                        if($request->file('drums')) {
+                        if($request->get('drums')) {
                             $reception->drums           =    $request->get('drums');
                         } 
+                        if($request->get('come_id')) {
+                            $reception->come_id           =    $request->get('come_id');
+                        }
 
                 $reception->save();
             }
@@ -117,8 +120,6 @@ class ReceptionController extends Controller
             //dd($request->all());        
             $reception = Reception::create($request->all());
         }
-
-
        
 
         //IMAGE 
@@ -126,6 +127,13 @@ class ReceptionController extends Controller
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $reception->fill(['file' => asset($path)])->save();
         }
+
+
+        if($request->get('come_id')) {
+            $client = Client::find($request->get('client_id'));
+            $client->fill(['come_id' => $request->get('come_id')])->save();
+        }
+
 
         Alert::success('Recepción creada con exito')->persistent('Cerrar');
         return redirect()->route('receptions.index');
@@ -179,6 +187,11 @@ class ReceptionController extends Controller
         if($request->file('image')){
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $reception->fill(['file' => asset($path)])->save();
+        }
+
+        if($request->get('come_id')) {
+            $client = Client::find($request->get('client_id'));
+            $client->fill(['come_id' => $request->get('come_id')])->save();
         }
 
         Alert::success('Recepción actualizada con exito')->persistent('Cerrar');

@@ -20,6 +20,11 @@
                         Inf. Trabajos Realizados 
                     </a>
                 </div>
+                <div class="form-group" style="font-size:16pt">
+                    <a href="{{ route('reports.show', 2) }}" style="color:#235B88;">
+                        Inf. Clientes/Publicidad
+                    </a>
+                </div>
                 <!--
                 <div class="form-group" style="font-size:16pt">
                     <a href="{{ route('reports.show', 3) }}" style="color:#235B88;">

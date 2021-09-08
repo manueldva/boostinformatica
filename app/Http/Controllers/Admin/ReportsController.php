@@ -141,32 +141,24 @@ class ReportsController extends Controller
     {
         //dd($fechadesde);
         
-        $deliveries1 = 
+        $publicidades = 
         "select 
-            R.id reception_id,
-            C.name,
-            DATE_FORMAT(D.deliverdate , '%d-%m-%Y') deliverdate,
-            
-            CASE
-                WHEN D.repaired = 'YES' THEN 'SI'
-                ELSE 'NO'
-            END repaired,
-            D.workPrice,
-            D.cost
-            from receptions R
-            inner join deliveries D on R.id = D.reception_id
-            inner join clients C on R.client_id =  C.id
+            C.description,
+            count(Cl.id) cantidad
+            from comes C
+            inner join clients Cl on C.id = Cl.come_id
             where 
 
-             DATE_FORMAT(D.deliverdate , '%Y-%m-%d') between '" . $fechadesde . "' and '" . $fechahasta . "'
-            order by D.deliverDate";
+            DATE_FORMAT(Cl.created_at , '%Y-%m-%d') between '" . $fechadesde . "' and '" . $fechahasta . "'
+            group by C.description";
        
-        $deliveries = DB::select($deliveries1);
+        $publicidades = DB::select($publicidades);
         
+
         
         //dd($deliveries1);
 
-        $pdf = PDF::loadView('admin.reports.informeclientepublicidadprint', compact('deliveries'));
+        $pdf = PDF::loadView('admin.reports.informeclientepublicidadprint', compact('publicidades'));
             //$pdf->setPaper('Legal', 'landscape');
 
         //return $pdf->setPaper('Legal', 'landscape')->stream('informeequiporeparadoprint.pdf');

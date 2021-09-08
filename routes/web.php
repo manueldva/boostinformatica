@@ -60,4 +60,5 @@ route::put('/setting/{id}',		'Admin\ManageuserController@setting')->name('settin
 route::resource('reports', 		'Admin\ReportsController');
 
 route::get('/informeequiporeparadoprint/{fechadesde}/{fechahasta}',		'Admin\ReportsController@informeequiporeparadoprint')->name('informeequiporeparadoprint');
+route::get('/informeclientepublicidadprint/{fechadesde}/{fechahasta}',		'Admin\ReportsController@informeclientepublicidadprint')->name('informeclientepublicidadprint');
 

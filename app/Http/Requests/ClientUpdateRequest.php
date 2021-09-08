@@ -25,7 +25,8 @@ class ClientUpdateRequest extends FormRequest
     {
 
         $rules = [
-            'name' => 'required|unique:clients,name,' . $this->client
+            'name' => 'required|unique:clients,name,' . $this->client,
+            'come_id' => 'required'
             //'address' => 'required',
             //'cellPhone' => 'required'
         ];

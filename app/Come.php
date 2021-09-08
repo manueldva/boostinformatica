@@ -14,4 +14,8 @@ class Come extends Model
     public function receptions(){
     	return $this->HasMany(Reception::class);
     }
+
+    public function clients(){
+    	return $this->HasMany(Client::class);
+    }
 }

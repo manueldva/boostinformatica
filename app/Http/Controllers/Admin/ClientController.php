@@ -11,6 +11,7 @@ use Alert;
 use App\Http\Controllers\Controller;
 use App\Client;
 use App\Reception;
+use App\Come;
 
 class ClientController extends Controller
 {
@@ -41,7 +42,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('admin.clients.create');
+        $comes  = Come::orderBy('description', 'ASC')->pluck('description' , 'id');
+        return view('admin.clients.create', compact('comes'));
     }
 
     /**
@@ -80,7 +82,9 @@ class ClientController extends Controller
     {
         $client = Client::find($id);
 
-        return view('admin.clients.edit', compact('client'));
+        $comes  = Come::orderBy('description', 'ASC')->pluck('description' , 'id');
+
+        return view('admin.clients.edit', compact('client','comes'));
     }
 
     /**

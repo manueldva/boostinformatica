@@ -8,12 +8,17 @@ class Client extends Model
 {
     
     protected $fillable = [
-		'name', 'address', 'cellPhone', 'phone', 'email'
+		'name', 'address', 'cellPhone', 'phone', 'email', 'come_id'
 	];
 	    
 
     public function receptions(){
     	return $this->HasMany(Reception::class);
+    }
+
+    public function come(){
+        
+        return $this->belongsTo(Come::class);
     }
 
 

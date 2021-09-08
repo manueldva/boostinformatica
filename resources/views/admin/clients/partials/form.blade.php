@@ -19,6 +19,11 @@
 	{{ form::email('email', null, ['class' => 'form-control', 'id' => 'email']) }}
 </div>
 <div class="form-group">
+	{{ form::label('come_id', 'Publicidad:') }}
+	{{ form::select('come_id', $comes, null, ['class' => 'form-control','placeholder' => 'Seleccionar...'] ) }}
+</div>
+
+<div class="form-group">
 	<button type="submit" class="btn btn-sm btn-primary"></span> Guardar</button>
 </div>
 

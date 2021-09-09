@@ -356,6 +356,9 @@
                     <td style="width: 10%">
                         Total
                     </td>
+                    <td style="width: 10%">
+                        Descuento Efectivo
+                    </td>
                 </tr>
             </thead>
             <tbody>
@@ -379,6 +382,9 @@
                     </td>
                     <td>
                         {{ $delivery->workPrice }}
+                    </td>
+                    <td>
+                        {{ $delivery->discount }}
                     </td>
                 </tr>
                
@@ -415,6 +421,9 @@
                     
                     <th style="width: 33%">
                         Subtotal  {{ $delivery->workPrice }}
+                    </th>
+                    <th style="width: 33%">
+                        Descuento Efectivo  {{ $delivery->discount }}
                     </th>
                 </tr>
                  <tr>

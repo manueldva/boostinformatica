@@ -8,7 +8,7 @@ class Delivery extends Model
 {
     
     protected $fillable = [
-		'reception_id', 'deliverDate', 'workPrice', 'workDone', 'observationCost', 'cost', 'repaired','salecondition'
+		'reception_id', 'deliverDate', 'workPrice', 'workDone', 'observationCost', 'cost', 'repaired','salecondition','discount'
 	];
 	    
 

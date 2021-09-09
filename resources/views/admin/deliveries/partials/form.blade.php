@@ -50,6 +50,10 @@
 	{{ form::number('workPrice', null, ['class' => 'form-control', 'id' => 'workPrice', 'step' => '0.01']) }}
 </div>
 
+<div class="form-group">
+	{{ form::label('discount', 'Descuento Efectivo (Opcional):') }}
+	{{ form::number('discount', null, ['class' => 'form-control', 'id' => 'discount', 'step' => '0.01']) }}
+</div>
 
 <div class="form-group">
 	<button type="submit" class="btn btn-sm btn-primary"> Guardar</button>

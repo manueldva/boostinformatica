@@ -48,7 +48,7 @@
 						<p> <strong>Bateria:</strong> {{ $reception->battery }}</p>
                     @endif
                     @if($reception->charge)
-						<p> <strong>Cardador:</strong> {{ $reception->charge }}</p>
+						<p> <strong>Cargador:</strong> {{ $reception->charge }}</p>
                     @endif
 
 					@if($reception->file)
@@ -57,6 +57,14 @@
                     @endif
 					@if($reception->come_id)
 						<p> <strong>Publicidad:</strong> {{ $reception->come->description }}</p>
+                    @endif
+                   @if($reception->ignition == 'NOT')
+						<p> <strong>¿Encendió?: </strong>No</p>
+					@else
+						<p> <strong>¿Encendió?: </strong>Si</p>
+                    @endif
+                     @if($reception->keycode)
+						<p> <strong>Clave:</strong> {{ $reception->keycode }}</p>
                     @endif
 				</div>
 			</div>

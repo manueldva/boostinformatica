@@ -111,8 +111,14 @@ class ReceptionController extends Controller
                             $reception->drums           =    $request->get('drums');
                         } 
                         if($request->get('come_id')) {
-                            $reception->come_id           =    $request->get('come_id');
+                            $reception->come_id         =    $request->get('come_id');
                         }
+                        if($request->get('ignition')) {
+                            $reception->ignition        =    $request->get('ignition');
+                        }
+                        if($request->get('keycode')) {
+                            $reception->keycode         =    $request->get('keycode');
+                        }   
 
                 $reception->save();
             }

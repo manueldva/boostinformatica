@@ -53,12 +53,12 @@ exit();*/
       <tr>
         <td colspan="4">Señor/es: <strong>{{ $reception->client->name }} </strong></td>
       </tr>
-      <tr>
+      <!--<tr>
         <td colspan="4">Domicilio: <strong>{{ $reception->client->address }}</strong></td>
-      </tr>
+      </tr>-->
       <tr>
-        <td colspan="2">Nro Telefono: <strong>{{ $reception->client->phone }}</strong></td>
-        <td colspan="2">Nro Celular: <strong>{{ $reception->client->cellPhone }}</strong></td>
+        <!--<td colspan="2">Nro Telefono: <strong>{{ $reception->client->phone }}</strong></td>-->
+        <td colspan="4">Nro Celular: <strong>{{ $reception->client->cellPhone }}</strong></td>
       </tr>
       <tr>
       	<td colspan="4">
@@ -74,6 +74,13 @@ exit();*/
       <tr>
         <td colspan="2">Recibi (mos) un (a): <strong>  {{ $reception->equipment->description }} </strong></td>
         <td colspan="2">Modelo: <strong>  {{ $reception->model }} </strong></td>
+      </tr>
+      <tr>
+        <td colspan="4">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2">Clave: <strong> @if($reception->keycode)  {{$reception->keycode }} @endif</strong></td>
+        <td colspan="2">¿Encendió?: <strong>@if($reception->ignition == 'NOT') No @elseif($reception->ignition == 'YES') Si @else - @endif </strong></td>
       </tr>
       <tr>
         <td colspan="4">&nbsp;</td>

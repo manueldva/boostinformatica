@@ -31,7 +31,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
        //$receptions = Reception::orderBy('id', 'DESC')->paginate();
-
+        //dd($request->get('producttype_id'));
         $products = Product::type($request->get('producttype_id'), $request->get('val'))->paginate(10);
         $products->setPath('products');
 

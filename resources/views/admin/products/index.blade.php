@@ -120,7 +120,7 @@
 
 		$('#producttype_id').change(function(e) {
 			//searchType(); 
-			$('#val').val('');
+			//$('#val').val('');
 			$('#val').focus();
 		});
 

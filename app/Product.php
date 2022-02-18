@@ -19,13 +19,24 @@ class Product extends Model
   public function scopeType($query, $producttype_id, $valor) 
   {
   
-  if ($producttype_id)
+    if ($producttype_id)
+    {
+        if($valor) 
+        {
+          $query->where('description', 'like', '%' . $valor . '%')->where('producttype_id', '=', $producttype_id)->orderBy('description');
+        } else {
+          $query->where('producttype_id', '=', $producttype_id)->orderBy('description');
+        }
+    
+    } else 
+    {
+      if($valor) 
       {
-        $query->where('description', 'like', '%' . $valor . '%')->where('producttype_id', '=', $producttype_id)->orderBy('description');
-
-      } else
+        $query->where('description', 'like', '%' . $valor . '%')->orderBy('description');
+      } else 
       {
         $query->orderBy('description');
       }
+    }
   }
 }

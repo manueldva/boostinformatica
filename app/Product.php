@@ -16,12 +16,12 @@ class Product extends Model
 		return $this->belongsTo(Producttype::class);
 	}
   
-  public function scopeType($query, $type, $valor) 
+  public function scopeType($query, $producttype_id, $valor) 
   {
   
-  if ($type == 'description')
+  if ($producttype_id)
       {
-        $query->where('description', 'like', '%' . $valor . '%')->orderBy('description');
+        $query->where('description', 'like', '%' . $valor . '%')->where('producttype_id', '=', $producttype_id)->orderBy('description');
 
       } else
       {

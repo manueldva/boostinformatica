@@ -114,9 +114,11 @@
 			if (type == 'date'){
 				$('#val').attr('type','date');
 				$('#val').focus();
+				$('#val').val('');
 			} else if (type == 'id')
 			{
-				$('#val').attr('type','number');
+				//$('#val').attr('type','number');
+				$('#val').attr('type','text');
 				$('#val').focus();
 			} else
 			{
@@ -130,7 +132,7 @@
 
 		$('#type').change(function(e) {
 			searchType(); 
-			$('#val').val('');
+			//$('#val').val('');
 			$('#val').focus();
 		});
 

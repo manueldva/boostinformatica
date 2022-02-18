@@ -17,10 +17,11 @@
 					
 					<form class="navbar-form navbar-right" role="search">
 						
-						{{ Form::model(Request::only('type', 'val'), array('route' => 'products.index', 'method' => 'GET'), array('role' => 'form', 'class' => 'navbar-form pull-right')) }}
+						{{ Form::model(Request::only('producttype_id', 'val'), array('route' => 'products.index', 'method' => 'GET'), array('role' => 'form', 'class' => 'navbar-form pull-right')) }}
 						<div class="form-group">
 							{{ form::label('buscar', 'Tipo Busqueda:') }}
-							{{ form::select('type', config('options.products'), null, ['class' => 'form-control', 'id' => 'type'] ) }}
+							<!--{{ form::select('type', config('options.products'), null, ['class' => 'form-control', 'id' => 'type'] ) }}-->
+							{{ form::select('producttype_id', $producttypes, null, ['class' => 'form-control', 'placeholder' => 'Seleccionar...','id' => 'producttype_id'] ) }}
 							{{ form::text('val', null, ['class' => 'form-control', 'id' => 'val']) }}
 							
 							<button type="submit" class="btn btn-sm btn-success"> Buscar</button>
@@ -82,7 +83,7 @@
 							</tbody>
 						</table>
 					</div>	
-					{{ $products->appends(Request::only(['type', 'val']))->render() }}
+					{{ $products->appends(Request::only(['producttype_id', 'val']))->render() }}
 				</div>
 
 			</div>
@@ -101,9 +102,10 @@
 	<script type="text/javascript">
 
 		
-		function searchType(){ 
-		   var type = $('#type').val();
+		/*function searchType(){ 
+		   var type = $('#producttype_id').val();
 			if (type == 'description'){
+				producttype_id
 				$('#val').attr('type','text');
 				$('#val').focus();
 			} else
@@ -114,10 +116,10 @@
 		}
 
 		searchType(); 
-		
+		*/
 
-		$('#type').change(function(e) {
-			searchType(); 
+		$('#producttype_id').change(function(e) {
+			//searchType(); 
 			$('#val').val('');
 			$('#val').focus();
 		});

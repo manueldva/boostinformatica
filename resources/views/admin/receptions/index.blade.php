@@ -118,12 +118,13 @@
 			{
 				$('#val').show();
 				$('#status').hide();
-				$('#val').attr('type','number');
-				//$('#val').focus();
+				//$('#val').attr('type','number');
+				$('#val').attr('type','text');
 			}else if (type == 'status')
 			{
 				$('#val').hide();
 				$('#status').show();
+				$('#val').val('');
 			} else
 			{
 				$('#val').show();
@@ -139,11 +140,11 @@
 		$('#type').change(function(e) {
 			searchType(); 
 
-			$('#val').val('');
+			//$('#val').val('');
 			$('#val').focus();
       //$("#cajas").val($("#cajas option:first").val());
 			//$("#rubros").val($("#rubros option:first").val());
-			$('#status').val('');
+			//$('#status').val('');
 		});
 
 

@@ -32,11 +32,12 @@ class ProductController extends Controller
     {
        //$receptions = Reception::orderBy('id', 'DESC')->paginate();
 
-        $products = Product::type($request->get('type'), $request->get('val'))->paginate(10);
+        $products = Product::type($request->get('producttype_id'), $request->get('val'))->paginate(10);
         $products->setPath('products');
 
         //dd($products[0]->producttype->description);
-        return view('admin.products.index', compact('products'));
+        $producttypes = Producttype::orderBy('description', 'ASC')->pluck('description' , 'id');
+        return view('admin.products.index', compact('products','producttypes'));
     }
 
     /**

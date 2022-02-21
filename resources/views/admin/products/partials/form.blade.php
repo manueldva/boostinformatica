@@ -11,8 +11,12 @@
 </div>
 
 <div class="form-group">
-	{{ form::label('price', 'Precio:') }}
+	{{ form::label('price', 'Precio Efectivo:') }}
 	{{ form::number('price', null, ['class' => 'form-control', 'id' => 'price', 'step' => '0.01']) }}
+</div>
+<div class="form-group">
+	{{ form::label('price2', 'Precio Lista:') }}
+	{{ form::number('price2', null, ['class' => 'form-control', 'id' => 'price2', 'step' => '0.01']) }}
 </div>
 
 <div class="form-group">
